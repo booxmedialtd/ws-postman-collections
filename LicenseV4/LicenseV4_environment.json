@@ -1,0 +1,44 @@
+{
+	"id": "85117b52-a999-40d6-85fd-ab5479098c56",
+	"name": "Postman_LicenseV4",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://2c0d56f3-324f-457a-ba32-161d5540cd01.mock.pstmn.io",
+			"enabled": true
+		},
+		{
+			"key": "email",
+			"value": "test@test.com",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "1234",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwcmVwcm9kLnR2LmRlbHRhLm5sIiwiYXVkIjoicHJlcHJvZC50di5kZWx0YS5ubCIsInR5cGUiOiJhY2Nlc3MiLCJqdGkiOiJWYXBlM2czN2xKIiwiaWF0IjoxNjAyNzQwOTgzLCJuYmYiOjE2MDI3NDA5ODMsImV4cCI6MTYwMjc0Mjc4MywiZGF0YSI6eyJ1c2VySWQiOiI4MDc1NiIsInVzZXJfZW1haWwiOiJhbWlub3FhMDFAY2xvdWRwdnIubmwifSwic3ViIjoiODA3NTYiLCJwcm9maWxlIjoiYmYxM2I4ZDAtZTEwYy0xMWU5LTllOGUtMDA1MDU2YTIyYzQ5In0.pzdaoOxkvHFJJPT4-EQKqHGxFzl_xcj0UhgV3_d62pI",
+			"enabled": true
+		},
+		{
+			"key": "apiKey",
+			"value": "<OVERRIDE>",
+			"enabled": true
+		},
+		{
+			"key": "userId",
+			"value": "80756",
+			"enabled": true
+		},
+		{
+			"key": "profileId",
+			"value": "bf13b8d0-e10c-11e9-9e8e-005056a22c49",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-10-16T10:47:58.644Z",
+	"_postman_exported_using": "Postman/7.32.0"
+}
