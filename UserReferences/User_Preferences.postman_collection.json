@@ -1,0 +1,2541 @@
+{
+	"info": {
+		"_postman_id": "e824bd17-6d19-406a-b54e-45094d979837",
+		"name": "User_Preferences",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API spec",
+			"item": [
+				{
+					"name": "User Sessions",
+					"item": [
+						{
+							"name": "Get list of active user sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f77c5d38-7de6-4494-a243-1066b8c9503a",
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "200",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}",
+											"description": "(Required) The ID of the user to fetch user sessions for."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer <OVERRIDE>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"description": "(Required) The ID of the user to fetch user sessions for.",
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"nnnn\",\n      \"title\": \"Unauthorized\",\n      \"detail\": \"Authentication failed\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer <OVERRIDE>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"description": "(Required) The ID of the user to fetch user sessions for.",
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": \"530a08c0-3fd7-4d0d-b799-712ed9c07573\",\n            \"type\": \"UserSession\",\n            \"attributes\": {\n                \"device_info\": {\n                    \"type\": \"Web\",\n                    \"description\": \"Google Chrome on Linux\"\n                },\n                \"created_at\": 1601021993,\n                \"updated_at\": 1601021993,\n                \"expires_at\": 1601108393\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"41\",\n                        \"type\": \"User\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Log out all sessions for the user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "afa1cf71-536c-4117-b7a9-c052d8f53dbc",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "204",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete all user sessions successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Log out a session by refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "81712b20-06ff-440f-abac-3f7088801d55",
+										"exec": [
+											"pm.test(\"Response should be 201\", () => {",
+											"    pm.response.to.have.status(201);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "204",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								},
+								"description": "User session are terminated, the session's refresh token is revoked"
+							},
+							"response": [
+								{
+									"name": "Successfully terminated",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Log out given session for the user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8b6f7251-eaef-4a0c-8b20-288790b2fe72",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "204",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Successfully terminated",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions",
+										":session_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										},
+										{
+											"key": "session_id",
+											"value": "{{sessionId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Session not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions",
+												":session_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												},
+												{
+													"key": "session_id",
+													"value": "{{sessionId}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"nnnn\",\n      \"title\": \"Not found\",\n      \"detail\": \"The session ID was not found with the specified user\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Successfully terminated",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions",
+												":session_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												},
+												{
+													"key": "session_id",
+													"value": "{{sessionId}}"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions",
+												":session_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												},
+												{
+													"key": "session_id",
+													"value": "{{sessionId}}"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{accessToken}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "70a68a36-a61e-4348-b7e1-ba6bed355a3f",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "93d4adba-c80a-4895-bee2-091e7146022b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Authentication with refresh_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7a86fb72-474c-4450-9da4-3bb88a80f081",
+										"exec": [
+											"pm.test(\"Set access token\", function(){",
+											"    pm.response.to.have.status(201);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"grant_type\": \"refresh_token\",\n  \"credentials\": {\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFbmFibGVTVEIiLCJpYXQiOjE1MzE4MzQyNDEsImV4cCI6MTU2MzM3MDI0MSwiYXVkIjoid3d3LmFtaW5vY29tLmNvbSIsInN1YiI6ImFuZHkuYmVha0BhbWlub2NvbS5jb20ifQ.jtTwO3YEyXmEf5XjjxUK8V_MPRvxdi7DN1eEBUyjfkE\"\n  },\n  \"login_user_profile\": \"84eb61a9-75d4-42c7-8c15-84c3d7776227\"\n}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/v1/access_tokens",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"v1",
+										"access_tokens"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Bad requests",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"grant_type\": \"refresh_token\",\n  \"credentials\": {\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFbmFibGVTVEIiLCJpYXQiOjE1MzE4MzQyNDEsImV4cCI6MTU2MzM3MDI0MSwiYXVkIjoid3d3LmFtaW5vY29tLmNvbSIsInN1YiI6ImFuZHkuYmVha0BhbWlub2NvbS5jb20ifQ.jtTwO3YEyXmEf5XjjxUK8V_MPRvxdi7DN1eEBUyjfkE\"\n  },\n  \"login_user_profile\": \"84eb61a9-75d4-42c7-8c15-84c3d7776227\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/v1/access_tokens",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"v1",
+												"access_tokens"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"400\",\n            \"code\": \"30204\",\n            \"title\": \"Invalid Input Params\",\n            \"detail\": \" - grant_type must not be empty\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/v1/access_tokens",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"v1",
+												"access_tokens"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"data\": {\n    \"type\": \"AccessToken\",\n    \"id\": \"9bc6871e-ce26-4b8a-96f6-e6688599d938\",\n    \"attributes\": {\n      \"login_timestamp\": 1538126476,\n      \"user_id\": \"1234\",\n      \"user_profile_id\": \"84eb61a9-75d4-42c7-8c15-84c3d7776227\",\n      \"user_flags\": [\n        \"TEST_FLAG1\"\n      ],\n      \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBbWlub01vdmUiLCJpYXQiOjE1Mzc1MjIxNzQsImV4cCI6MTUzODEyNjk3OSwiYXVkIjoid3d3LmJvb3h0di5maSIsInN1YiI6ImV4YW1wbGVfdXNlckBlbWFpbGRvbWFpbi5jb20iLCJwcm9maWxlX2lkIjoiNmM3Zjk0YWYtYjYwMy00ZjM5LTgzODQtZjEyMjI2ZWE5ZDRjNmM3Zjk0YWYtYjYwMy00ZjM5LTgzODQtZjEyMjI2ZWE5ZDRjIiwidHlwZSI6ImFjY2VzcyIsInN0Yl9zZXJpYWxfbm8iOiI2MTU1MDAyNjYxNjIifQ.RW6NdDE_kGgkOVKqodeT1fDdxU7Slaf551rp5ctBcFc\",\n      \"expires_at_timestamp\": 1538126476,\n      \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBbWlub01vdmUiLCJpYXQiOjE1Mzc1MjIxNzQsImV4cCI6MTU0NTk4OTM3OSwiYXVkIjoid3d3LmJvb3h0di5maSIsInN1YiI6ImV4YW1wbGVfdXNlckBlbWFpbGRvbWFpbi5jb20iLCJ0eXBlIjoicmVmcmVzaCJ9.9Pxzv0oGxjZmAIpZiH-aiue7LwAMcddPPHnaiOkpb-A\"\n    }\n  }\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{accessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4f5479b8-7aab-4f5b-b96a-96c4f86deac6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a70551e0-0332-4bdb-8d9d-6e1938715c33",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "UseCase",
+			"item": [
+				{
+					"name": "User Sessions",
+					"item": [
+						{
+							"name": "Not authorized user can not get list of active user sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "70c648eb-f2fb-4caf-8498-27f8c1c067dd",
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer <OVERRIDE>"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "401",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"description": "(Required) The ID of the user to fetch user sessions for.",
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer <OVERRIDE>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"description": "(Required) The ID of the user to fetch user sessions for.",
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"nnnn\",\n      \"title\": \"Unauthorized\",\n      \"detail\": \"Authentication failed\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Authorized user can get list of active user sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8acb7082-4cd0-49e3-b976-97cfaf8f9d08",
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "200",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}",
+											"description": "(Required) The ID of the user to fetch user sessions for."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer <OVERRIDE>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"description": "(Required) The ID of the user to fetch user sessions for.",
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": \"530a08c0-3fd7-4d0d-b799-712ed9c07573\",\n            \"type\": \"UserSession\",\n            \"attributes\": {\n                \"device_info\": {\n                    \"type\": \"Web\",\n                    \"description\": \"Google Chrome on Linux\"\n                },\n                \"created_at\": 1601021993,\n                \"updated_at\": 1601021993,\n                \"expires_at\": 1601108393\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"41\",\n                        \"type\": \"User\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Authorized user can not get list of active user sessions of another user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "01a036e4-11ce-471a-841e-e30375e78f12",
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer <OVERRIDE>"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "403",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"description": "(Required) The ID of the user to fetch user sessions for.",
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Action not permit",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer <OVERRIDE>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"description": "(Required) The ID of the user to fetch user sessions for.",
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"403\",\n      \"code\": \"nnnn\",\n      \"title\": \"Action not permit\",\n      \"detail\": \"Authentication failed\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Not authorized user can not log out all sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e2dd472a-b466-47f6-8eb2-4d7cc955dcbe",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "401",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Authorized user can log out all sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e6ca2888-0a3e-49e7-92a2-8b125877eebd",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "204",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete all user sessions successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Authorized user can not log out all sessions of another user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d4b5e312-4601-4734-b704-36ebd9d332e7",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "403",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Action not permit",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"403\",\n            \"code\": \"nnnn\",\n            \"title\": \"Action not permit\",\n            \"detail\": \"Authenticated user not authorized to perform action\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Not authorized user can not log out a session by refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9e5c5c95-a706-4619-b170-1c8102dead85",
+										"exec": [
+											"pm.test(\"Response should be 201\", () => {",
+											"    pm.response.to.have.status(201);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "401",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Authorized user can log out a session by refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8b6c9717-e546-4724-a292-944c21fc6cc9",
+										"exec": [
+											"pm.test(\"Response should be 201\", () => {",
+											"    pm.response.to.have.status(201);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "204",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully terminated",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Authorized user can not log out a session of another user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f351ed17-e0c0-40aa-8484-16f0b85fea2b",
+										"exec": [
+											"pm.test(\"Response should be 201\", () => {",
+											"    pm.response.to.have.status(201);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "403",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Action not permit",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh_token\": \"b984aef3aee1fd98d060253e69fcabc128f84477\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"403\",\n            \"code\": \"nnnn\",\n            \"title\": \"Action not permit\",\n            \"detail\": \"Authenticated user not authorized to perform action\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Unauthorized user can not log out given session",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "025fbb76-fc68-4e45-a461-f4d9c2782f19",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "401",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Unauthorized",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions",
+										":session_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										},
+										{
+											"key": "session_id",
+											"value": "{{sessionId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions",
+												":session_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												},
+												{
+													"key": "session_id",
+													"value": "{{sessionId}}"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Authorized user can log out given session for the user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3d93cc86-9b64-425b-8634-20e9d672cd4f",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "204",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Successfully terminated",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions",
+										":session_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										},
+										{
+											"key": "session_id",
+											"value": "{{sessionId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully terminated",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions",
+												":session_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												},
+												{
+													"key": "session_id",
+													"value": "{{sessionId}}"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Authorized user can not log out a not found given session",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f568b59c-41f0-4ec9-b0db-982f127c34df",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer <OVERRIDE>"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Session not found",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "404",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions",
+										":session_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										},
+										{
+											"key": "session_id",
+											"value": "{{sessionId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Session not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions",
+												":session_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												},
+												{
+													"key": "session_id",
+													"value": "{{sessionId}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"nnnn\",\n      \"title\": \"Not found\",\n      \"detail\": \"The session ID was not found with the specified user\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Authorized user can not log out given session for another user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a081f1e6-4b59-46f8-80d4-33920ec2ba5e",
+										"exec": [
+											"pm.test(\"Response should be 204\", () => {",
+											"    pm.response.to.have.status(204);",
+											"    pm.response.to.be.not.empty;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <OVERRIDE>",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Action not permit",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "403",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"v2",
+										"users",
+										":user_id",
+										"user_sessions",
+										":session_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{userId}}"
+										},
+										{
+											"key": "session_id",
+											"value": "{{sessionId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Action not permit",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <OVERRIDE>",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/v2/users/:user_id/user_sessions/:session_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"v2",
+												"users",
+												":user_id",
+												"user_sessions",
+												":session_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "{{userId}}"
+												},
+												{
+													"key": "session_id",
+													"value": "{{sessionId}}"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"403\",\n            \"code\": \"nnnn\",\n            \"title\": \"Action not permit\",\n            \"detail\": \"Authenticated user not authorized to perform action\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Obtain an access token with refresh token fails because of bad requests",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1ae5fb94-9013-4047-88c2-b8bccf6b8a67",
+										"exec": [
+											"pm.test(\"Set access token\", function(){",
+											"    pm.response.to.have.status(400);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "400",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"grant_type\": \"\",\n  \"credentials\": {\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFbmFibGVTVEIiLCJpYXQiOjE1MzE4MzQyNDEsImV4cCI6MTU2MzM3MDI0MSwiYXVkIjoid3d3LmFtaW5vY29tLmNvbSIsInN1YiI6ImFuZHkuYmVha0BhbWlub2NvbS5jb20ifQ.jtTwO3YEyXmEf5XjjxUK8V_MPRvxdi7DN1eEBUyjfkE\"\n  },\n  \"login_user_profile\": \"84eb61a9-75d4-42c7-8c15-84c3d7776227\"\n}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/v1/access_tokens",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"v1",
+										"access_tokens"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Bad requests",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"grant_type\": \"refresh_token\",\n  \"credentials\": {\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFbmFibGVTVEIiLCJpYXQiOjE1MzE4MzQyNDEsImV4cCI6MTU2MzM3MDI0MSwiYXVkIjoid3d3LmFtaW5vY29tLmNvbSIsInN1YiI6ImFuZHkuYmVha0BhbWlub2NvbS5jb20ifQ.jtTwO3YEyXmEf5XjjxUK8V_MPRvxdi7DN1eEBUyjfkE\"\n  },\n  \"login_user_profile\": \"84eb61a9-75d4-42c7-8c15-84c3d7776227\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/v1/access_tokens",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"v1",
+												"access_tokens"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"400\",\n            \"code\": \"30204\",\n            \"title\": \"Invalid Input Params\",\n            \"detail\": \" - grant_type must not be empty\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Obtain an access token with refresh_token successful",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "aecf50af-e943-4d61-af34-fdd7cad0181e",
+										"exec": [
+											"pm.test(\"Set access token\", function(){",
+											"    pm.response.to.have.status(201);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-response-code",
+										"value": "201",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"grant_type\": \"refresh_token\",\n  \"credentials\": {\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFbmFibGVTVEIiLCJpYXQiOjE1MzE4MzQyNDEsImV4cCI6MTU2MzM3MDI0MSwiYXVkIjoid3d3LmFtaW5vY29tLmNvbSIsInN1YiI6ImFuZHkuYmVha0BhbWlub2NvbS5jb20ifQ.jtTwO3YEyXmEf5XjjxUK8V_MPRvxdi7DN1eEBUyjfkE\"\n  },\n  \"login_user_profile\": \"84eb61a9-75d4-42c7-8c15-84c3d7776227\"\n}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/v1/access_tokens",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"v1",
+										"access_tokens"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/plain",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/v1/access_tokens",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"v1",
+												"access_tokens"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"data\": {\n    \"type\": \"AccessToken\",\n    \"id\": \"9bc6871e-ce26-4b8a-96f6-e6688599d938\",\n    \"attributes\": {\n      \"login_timestamp\": 1538126476,\n      \"user_id\": \"1234\",\n      \"user_profile_id\": \"84eb61a9-75d4-42c7-8c15-84c3d7776227\",\n      \"user_flags\": [\n        \"TEST_FLAG1\"\n      ],\n      \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBbWlub01vdmUiLCJpYXQiOjE1Mzc1MjIxNzQsImV4cCI6MTUzODEyNjk3OSwiYXVkIjoid3d3LmJvb3h0di5maSIsInN1YiI6ImV4YW1wbGVfdXNlckBlbWFpbGRvbWFpbi5jb20iLCJwcm9maWxlX2lkIjoiNmM3Zjk0YWYtYjYwMy00ZjM5LTgzODQtZjEyMjI2ZWE5ZDRjNmM3Zjk0YWYtYjYwMy00ZjM5LTgzODQtZjEyMjI2ZWE5ZDRjIiwidHlwZSI6ImFjY2VzcyIsInN0Yl9zZXJpYWxfbm8iOiI2MTU1MDAyNjYxNjIifQ.RW6NdDE_kGgkOVKqodeT1fDdxU7Slaf551rp5ctBcFc\",\n      \"expires_at_timestamp\": 1538126476,\n      \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBbWlub01vdmUiLCJpYXQiOjE1Mzc1MjIxNzQsImV4cCI6MTU0NTk4OTM3OSwiYXVkIjoid3d3LmJvb3h0di5maSIsInN1YiI6ImV4YW1wbGVfdXNlckBlbWFpbGRvbWFpbi5jb20iLCJ0eXBlIjoicmVmcmVzaCJ9.9Pxzv0oGxjZmAIpZiH-aiue7LwAMcddPPHnaiOkpb-A\"\n    }\n  }\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a5cf24eb-e103-4a74-b5a4-715cecb6d0b1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "edb4a2ae-8a6c-44ed-b04c-008434995ffe",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "fb61866e-30c3-49b0-99a3-6103863d3ab3",
+			"key": "baseUrl",
+			"value": "https://virtserver.swaggerhub.com/24i-API/User_Preferences_API/v2.0.0",
+			"type": "string",
+			"disabled": true
+		}
+	],
+	"protocolProfileBehavior": {}
+}
