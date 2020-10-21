@@ -36,6 +36,11 @@
 										"key": "x-mock-response-code",
 										"value": "200",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -97,7 +102,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"nnnn\",\n      \"title\": \"Unauthorized\",\n      \"detail\": \"Authentication failed\"\n    }\n  ]\n}"
 								},
@@ -137,7 +149,14 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"id\": \"530a08c0-3fd7-4d0d-b799-712ed9c07573\",\n            \"type\": \"UserSession\",\n            \"attributes\": {\n                \"device_info\": {\n                    \"type\": \"Web\",\n                    \"description\": \"Google Chrome on Linux\"\n                },\n                \"created_at\": 1601021993,\n                \"updated_at\": 1601021993,\n                \"expires_at\": 1601108393\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"41\",\n                        \"type\": \"User\"\n                    }\n                }\n            }\n        }\n    ]\n}"
 								}
@@ -265,7 +284,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
 								}
@@ -451,7 +477,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
 								}
@@ -554,10 +587,17 @@
 									},
 									"status": "Not Found",
 									"code": 404,
-									"_postman_previewlanguage": "",
-									"header": [],
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
-									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"nnnn\",\n      \"title\": \"Not found\",\n      \"detail\": \"The session ID was not found with the specified user\"\n    }\n  ]\n}"
+									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"404\",\n            \"code\": \"nnnn\",\n            \"title\": \"Not found\",\n            \"detail\": \"The session ID was not found with the specified user\"\n        }\n    ]\n}"
 								},
 								{
 									"name": "Successfully terminated",
@@ -643,7 +683,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
 								}
@@ -751,6 +798,11 @@
 										"key": "x-mock-response-code",
 										"value": "401",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -812,7 +864,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"nnnn\",\n      \"title\": \"Unauthorized\",\n      \"detail\": \"Authentication failed\"\n    }\n  ]\n}"
 								}
@@ -904,7 +963,14 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"id\": \"530a08c0-3fd7-4d0d-b799-712ed9c07573\",\n            \"type\": \"UserSession\",\n            \"attributes\": {\n                \"device_info\": {\n                    \"type\": \"Web\",\n                    \"description\": \"Google Chrome on Linux\"\n                },\n                \"created_at\": 1601021993,\n                \"updated_at\": 1601021993,\n                \"expires_at\": 1601108393\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"41\",\n                        \"type\": \"User\"\n                    }\n                }\n            }\n        }\n    ]\n}"
 								}
@@ -935,6 +1001,11 @@
 										"key": "x-mock-response-code",
 										"value": "403",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -954,7 +1025,7 @@
 										{
 											"description": "(Required) The ID of the user to fetch user sessions for.",
 											"key": "user_id",
-											"value": "{{userId}}"
+											"value": "123456789"
 										}
 									]
 								}
@@ -988,7 +1059,7 @@
 												{
 													"description": "(Required) The ID of the user to fetch user sessions for.",
 													"key": "user_id",
-													"value": "{{userId}}"
+													"value": "123456789"
 												}
 											]
 										}
@@ -996,7 +1067,14 @@
 									"status": "Forbidden",
 									"code": 403,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"403\",\n      \"code\": \"nnnn\",\n      \"title\": \"Action not permit\",\n      \"detail\": \"Authentication failed\"\n    }\n  ]\n}"
 								}
@@ -1025,6 +1103,11 @@
 									{
 										"key": "x-mock-response-code",
 										"value": "401",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
 										"type": "text"
 									}
 								],
@@ -1085,7 +1168,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
 								}
@@ -1203,6 +1293,11 @@
 										"key": "x-mock-response-code",
 										"value": "403",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -1221,7 +1316,7 @@
 									"variable": [
 										{
 											"key": "user_id",
-											"value": "{{userId}}"
+											"value": "123456789"
 										}
 									]
 								}
@@ -1254,7 +1349,7 @@
 											"variable": [
 												{
 													"key": "user_id",
-													"value": "{{userId}}"
+													"value": "123456789"
 												}
 											]
 										}
@@ -1262,7 +1357,14 @@
 									"status": "Forbidden",
 									"code": 403,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"403\",\n            \"code\": \"nnnn\",\n            \"title\": \"Action not permit\",\n            \"detail\": \"Authenticated user not authorized to perform action\"\n        }\n    ]\n}"
 								}
@@ -1302,6 +1404,11 @@
 									{
 										"key": "x-mock-response-code",
 										"value": "401",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
 										"type": "text"
 									}
 								],
@@ -1390,7 +1497,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
 								}
@@ -1545,7 +1659,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "text/plain",
+										"value": "application/vnd.api+json",
 										"type": "text"
 									},
 									{
@@ -1644,7 +1758,14 @@
 									"status": "Forbidden",
 									"code": 403,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"403\",\n            \"code\": \"nnnn\",\n            \"title\": \"Action not permit\",\n            \"detail\": \"Authenticated user not authorized to perform action\"\n        }\n    ]\n}"
 								}
@@ -1678,6 +1799,11 @@
 									{
 										"key": "x-mock-response-name",
 										"value": "Unauthorized",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
 										"type": "text"
 									}
 								],
@@ -1748,7 +1874,14 @@
 									"status": "Unauthorized",
 									"code": 401,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"401\",\n            \"code\": \"nnnn\",\n            \"title\": \"Unauthorized\",\n            \"detail\": \"Authentication failed\"\n        }\n    ]\n}"
 								}
@@ -1887,6 +2020,11 @@
 										"key": "x-mock-response-code",
 										"value": "404",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -1956,7 +2094,14 @@
 									"status": "Not Found",
 									"code": 404,
 									"_postman_previewlanguage": "",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"nnnn\",\n      \"title\": \"Not found\",\n      \"detail\": \"The session ID was not found with the specified user\"\n    }\n  ]\n}"
 								}
@@ -1991,6 +2136,11 @@
 										"key": "x-mock-response-code",
 										"value": "403",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -2010,7 +2160,7 @@
 									"variable": [
 										{
 											"key": "user_id",
-											"value": "{{userId}}"
+											"value": "123456789"
 										},
 										{
 											"key": "session_id",
@@ -2048,7 +2198,7 @@
 											"variable": [
 												{
 													"key": "user_id",
-													"value": "{{userId}}"
+													"value": "123456789"
 												},
 												{
 													"key": "session_id",
@@ -2060,7 +2210,14 @@
 									"status": "Forbidden",
 									"code": 403,
 									"_postman_previewlanguage": "json",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/vnd.api+json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"403\",\n            \"code\": \"nnnn\",\n            \"title\": \"Action not permit\",\n            \"detail\": \"Authenticated user not authorized to perform action\"\n        }\n    ]\n}"
 								}
@@ -2264,7 +2421,7 @@
 	],
 	"variable": [
 		{
-			"id": "b328df66-1b08-4fb0-97f6-1ab30e9c9010",
+			"id": "0ff68922-16f1-41ba-8c86-bf5dd2ed3c95",
 			"key": "baseUrl",
 			"value": "https://virtserver.swaggerhub.com/24i-API/User_Preferences_API/v2.0.0",
 			"type": "string",
