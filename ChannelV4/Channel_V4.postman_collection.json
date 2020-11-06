@@ -1,0 +1,1109 @@
+{
+	"info": {
+		"_postman_id": "e7d57228-fe57-4f5a-b1fe-0d19d4e0a2a9",
+		"name": "Channel_V4",
+		"description": "The Metadata API returns metadata related to the video content provided by the SmartVideo APIs.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Spec",
+			"item": [
+				{
+					"name": "Get an index of channels.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "{{page}}",
+									"description": "Page number if the results have more items than items per page. Default = 1."
+								},
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							]
+						},
+						"description": "* We do not support including related resources in the index view.\n* **Available since:** 2020-11 (BPLAT-14148)\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": [\n  {\n   \"attributes\": {\n    \"channel_domains\": [\n     \"foo\",\n     \"bar\"\n    ],\n    \"channel_number\": {\n     \"type\": \"integer\",\n     \"example\": 1\n    },\n    \"description\": \"Lozente\",\n    \"dvb_info\": [\n     {\n      \"onid\": 123,\n      \"quality\": \"SD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     },\n     {\n      \"onid\": 123,\n      \"quality\": \"UHD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     }\n    ],\n    \"enabled_services\": [\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     },\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     }\n    ],\n    \"images\": [\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     },\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     }\n    ],\n    \"media_type\": \"video\",\n    \"name\": \"Yle\",\n    \"metadata_provider_information\": [\n     {\n      \"external_id\": \"tempor adipis\",\n      \"provider\": \"ERICSSON\"\n     },\n     {\n      \"external_id\": \"nulla\",\n      \"provider\": \"ERICSSON\"\n     }\n    ]\n   },\n   \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n   \"relationships\": {\n    \"stream\": {\n     \"data\": {}\n    }\n   },\n   \"type\": \"Channel\"\n  },\n  {\n   \"attributes\": {\n    \"channel_domains\": [\n     \"foo\",\n     \"bar\"\n    ],\n    \"channel_number\": {\n     \"type\": \"integer\",\n     \"example\": 1\n    },\n    \"description\": \"Lozente\",\n    \"dvb_info\": [\n     {\n      \"onid\": 123,\n      \"quality\": \"SD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"T\"\n     },\n     {\n      \"onid\": 123,\n      \"quality\": \"HD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     }\n    ],\n    \"enabled_services\": [\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     },\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     }\n    ],\n    \"images\": [\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     },\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     }\n    ],\n    \"media_type\": \"audio\",\n    \"name\": \"Yle\",\n    \"metadata_provider_information\": [\n     {\n      \"external_id\": \"culpa amet commodo\",\n      \"provider\": \"ERICSSON\"\n     },\n     {\n      \"external_id\": \"voluptate id minim non eu\",\n      \"provider\": \"ERICSSON\"\n     }\n    ]\n   },\n   \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n   \"relationships\": {\n    \"stream\": {\n     \"data\": {}\n    }\n   },\n   \"type\": \"Channel\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific channel.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "404",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "",
+									"type": "string",
+									"description": "(Required) The identifier of the channel."
+								}
+							]
+						},
+						"description": "* **Available since:** 2020-11 (BPLAT-14149)\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": {\n  \"attributes\": {\n   \"channel_domains\": [\n    \"foo\",\n    \"bar\"\n   ],\n   \"channel_number\": {\n    \"type\": \"integer\",\n    \"example\": 1\n   },\n   \"description\": \"Lozente\",\n   \"dvb_info\": [\n    {\n     \"onid\": 123,\n     \"quality\": \"UHD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    },\n    {\n     \"onid\": 123,\n     \"quality\": \"SD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    }\n   ],\n   \"enabled_services\": [\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    },\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    }\n   ],\n   \"images\": [\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    },\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    }\n   ],\n   \"media_type\": \"video\",\n   \"name\": \"Yle\",\n   \"metadata_provider_information\": [\n    {\n     \"external_id\": \"proident\",\n     \"provider\": \"ERICSSON\"\n    },\n    {\n     \"external_id\": \"laborum et in\",\n     \"provider\": \"ERICSSON\"\n    }\n   ]\n  },\n  \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n  \"relationships\": {\n   \"stream\": {\n    \"data\": []\n   }\n  },\n  \"type\": \"Channel\"\n }\n}"
+						},
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "UseCase",
+			"item": [
+				{
+					"name": "List channels successfully",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "19e50c4f-2835-46f7-9645-4a171f41a270",
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "{{page}}",
+									"description": "Page number if the results have more items than items per page. Default = 1."
+								},
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": [\n  {\n   \"attributes\": {\n    \"channel_domains\": [\n     \"foo\",\n     \"bar\"\n    ],\n    \"channel_number\": {\n     \"type\": \"integer\",\n     \"example\": 1\n    },\n    \"description\": \"Lozente\",\n    \"dvb_info\": [\n     {\n      \"onid\": 123,\n      \"quality\": \"SD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     },\n     {\n      \"onid\": 123,\n      \"quality\": \"UHD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     }\n    ],\n    \"enabled_services\": [\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     },\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     }\n    ],\n    \"images\": [\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     },\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     }\n    ],\n    \"media_type\": \"video\",\n    \"name\": \"Yle\",\n    \"metadata_provider_information\": [\n     {\n      \"external_id\": \"tempor adipis\",\n      \"provider\": \"ERICSSON\"\n     },\n     {\n      \"external_id\": \"nulla\",\n      \"provider\": \"ERICSSON\"\n     }\n    ]\n   },\n   \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n   \"relationships\": {\n    \"stream\": {\n     \"data\": {}\n    }\n   },\n   \"type\": \"Channel\"\n  },\n  {\n   \"attributes\": {\n    \"channel_domains\": [\n     \"foo\",\n     \"bar\"\n    ],\n    \"channel_number\": {\n     \"type\": \"integer\",\n     \"example\": 1\n    },\n    \"description\": \"Lozente\",\n    \"dvb_info\": [\n     {\n      \"onid\": 123,\n      \"quality\": \"SD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"T\"\n     },\n     {\n      \"onid\": 123,\n      \"quality\": \"HD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     }\n    ],\n    \"enabled_services\": [\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     },\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     }\n    ],\n    \"images\": [\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     },\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     }\n    ],\n    \"media_type\": \"audio\",\n    \"name\": \"Yle\",\n    \"metadata_provider_information\": [\n     {\n      \"external_id\": \"culpa amet commodo\",\n      \"provider\": \"ERICSSON\"\n     },\n     {\n      \"external_id\": \"voluptate id minim non eu\",\n      \"provider\": \"ERICSSON\"\n     }\n    ]\n   },\n   \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n   \"relationships\": {\n    \"stream\": {\n     \"data\": {}\n    }\n   },\n   \"type\": \"Channel\"\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "List channels un-successfully with bad request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "acafa216-cbd0-4aaf-9058-0a59e53d561c",
+								"exec": [
+									"pm.test(\"Response should be 400\", () => {",
+									"    pm.response.to.have.status(400);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "400",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "{{page}}",
+									"description": "Page number if the results have more items than items per page. Default = 1."
+								},
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": [\n  {\n   \"attributes\": {\n    \"channel_domains\": [\n     \"foo\",\n     \"bar\"\n    ],\n    \"channel_number\": {\n     \"type\": \"integer\",\n     \"example\": 1\n    },\n    \"description\": \"Lozente\",\n    \"dvb_info\": [\n     {\n      \"onid\": 123,\n      \"quality\": \"SD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     },\n     {\n      \"onid\": 123,\n      \"quality\": \"UHD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     }\n    ],\n    \"enabled_services\": [\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     },\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     }\n    ],\n    \"images\": [\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     },\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     }\n    ],\n    \"media_type\": \"video\",\n    \"name\": \"Yle\",\n    \"metadata_provider_information\": [\n     {\n      \"external_id\": \"tempor adipis\",\n      \"provider\": \"ERICSSON\"\n     },\n     {\n      \"external_id\": \"nulla\",\n      \"provider\": \"ERICSSON\"\n     }\n    ]\n   },\n   \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n   \"relationships\": {\n    \"stream\": {\n     \"data\": {}\n    }\n   },\n   \"type\": \"Channel\"\n  },\n  {\n   \"attributes\": {\n    \"channel_domains\": [\n     \"foo\",\n     \"bar\"\n    ],\n    \"channel_number\": {\n     \"type\": \"integer\",\n     \"example\": 1\n    },\n    \"description\": \"Lozente\",\n    \"dvb_info\": [\n     {\n      \"onid\": 123,\n      \"quality\": \"SD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"T\"\n     },\n     {\n      \"onid\": 123,\n      \"quality\": \"HD\",\n      \"sid\": 4324,\n      \"tsid\": 123,\n      \"type\": \"C\"\n     }\n    ],\n    \"enabled_services\": [\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     },\n     {\n      \"pause\": false,\n      \"startover\": false,\n      \"trickplay\": false,\n      \"type\": \"Live\"\n     }\n    ],\n    \"images\": [\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     },\n     {\n      \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n      \"height_pixels\": 200,\n      \"image_type\": \"Thumbnail\",\n      \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n      \"width_pixels\": 320,\n      \"iso_639-2_lang\": \"fin\"\n     }\n    ],\n    \"media_type\": \"audio\",\n    \"name\": \"Yle\",\n    \"metadata_provider_information\": [\n     {\n      \"external_id\": \"culpa amet commodo\",\n      \"provider\": \"ERICSSON\"\n     },\n     {\n      \"external_id\": \"voluptate id minim non eu\",\n      \"provider\": \"ERICSSON\"\n     }\n    ]\n   },\n   \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n   \"relationships\": {\n    \"stream\": {\n     \"data\": {}\n    }\n   },\n   \"type\": \"Channel\"\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific channel successfully ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba6962a6-9b93-4edc-875f-fd05f3cd08ca",
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "",
+									"type": "string",
+									"description": "(Required) The identifier of the channel."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": {\n  \"attributes\": {\n   \"channel_domains\": [\n    \"foo\",\n    \"bar\"\n   ],\n   \"channel_number\": {\n    \"type\": \"integer\",\n    \"example\": 1\n   },\n   \"description\": \"Lozente\",\n   \"dvb_info\": [\n    {\n     \"onid\": 123,\n     \"quality\": \"UHD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    },\n    {\n     \"onid\": 123,\n     \"quality\": \"SD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    }\n   ],\n   \"enabled_services\": [\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    },\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    }\n   ],\n   \"images\": [\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    },\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    }\n   ],\n   \"media_type\": \"video\",\n   \"name\": \"Yle\",\n   \"metadata_provider_information\": [\n    {\n     \"external_id\": \"proident\",\n     \"provider\": \"ERICSSON\"\n    },\n    {\n     \"external_id\": \"laborum et in\",\n     \"provider\": \"ERICSSON\"\n    }\n   ]\n  },\n  \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n  \"relationships\": {\n   \"stream\": {\n    \"data\": []\n   }\n  },\n  \"type\": \"Channel\"\n }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific channel un-successfully with bad request ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "22652866-6135-4201-acf7-9c2487602025",
+								"exec": [
+									"pm.test(\"Response should be 400\", () => {",
+									"    pm.response.to.have.status(400);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "400",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "",
+									"type": "string",
+									"description": "(Required) The identifier of the channel."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": {\n  \"attributes\": {\n   \"channel_domains\": [\n    \"foo\",\n    \"bar\"\n   ],\n   \"channel_number\": {\n    \"type\": \"integer\",\n    \"example\": 1\n   },\n   \"description\": \"Lozente\",\n   \"dvb_info\": [\n    {\n     \"onid\": 123,\n     \"quality\": \"UHD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    },\n    {\n     \"onid\": 123,\n     \"quality\": \"SD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    }\n   ],\n   \"enabled_services\": [\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    },\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    }\n   ],\n   \"images\": [\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    },\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    }\n   ],\n   \"media_type\": \"video\",\n   \"name\": \"Yle\",\n   \"metadata_provider_information\": [\n    {\n     \"external_id\": \"proident\",\n     \"provider\": \"ERICSSON\"\n    },\n    {\n     \"external_id\": \"laborum et in\",\n     \"provider\": \"ERICSSON\"\n    }\n   ]\n  },\n  \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n  \"relationships\": {\n   \"stream\": {\n    \"data\": []\n   }\n  },\n  \"type\": \"Channel\"\n }\n}"
+						},
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Specified channel isn't found ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cbbcc7d6-cb26-4fc4-a67c-e374bf261717",
+								"exec": [
+									"pm.test(\"Response should be 404\", () => {",
+									"    pm.response.to.have.status(404);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "404",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "",
+									"type": "string",
+									"description": "(Required) The identifier of the channel."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"code\": \"amet aliqua culpa\",\n   \"details\": \"\",\n   \"id\": \"Excepteur\",\n   \"status\": \"nostrud adipisicing pariatur\",\n   \"title\": \"enim aliquip magna\"\n  },\n  {\n   \"code\": \"commodo\",\n   \"details\": \"laboris qui deserunt incididunt officia\",\n   \"id\": \"aliqua deserunt adipisicing incididunt aute\",\n   \"status\": \"sit\",\n   \"title\": \"ex culpa\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"data\": {\n  \"attributes\": {\n   \"channel_domains\": [\n    \"foo\",\n    \"bar\"\n   ],\n   \"channel_number\": {\n    \"type\": \"integer\",\n    \"example\": 1\n   },\n   \"description\": \"Lozente\",\n   \"dvb_info\": [\n    {\n     \"onid\": 123,\n     \"quality\": \"UHD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    },\n    {\n     \"onid\": 123,\n     \"quality\": \"SD\",\n     \"sid\": 4324,\n     \"tsid\": 123,\n     \"type\": \"T2\"\n    }\n   ],\n   \"enabled_services\": [\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    },\n    {\n     \"pause\": false,\n     \"startover\": false,\n     \"trickplay\": false,\n     \"type\": \"Live\"\n    }\n   ],\n   \"images\": [\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    },\n    {\n     \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n     \"height_pixels\": 200,\n     \"image_type\": \"Thumbnail\",\n     \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\",\n     \"width_pixels\": 320,\n     \"iso_639-2_lang\": \"fin\"\n    }\n   ],\n   \"media_type\": \"video\",\n   \"name\": \"Yle\",\n   \"metadata_provider_information\": [\n    {\n     \"external_id\": \"proident\",\n     \"provider\": \"ERICSSON\"\n    },\n    {\n     \"external_id\": \"laborum et in\",\n     \"provider\": \"ERICSSON\"\n    }\n   ]\n  },\n  \"id\": \"e022f021-11f5-4cd6-89f2-02535d89eed6\",\n  \"relationships\": {\n   \"stream\": {\n    \"data\": []\n   }\n  },\n  \"type\": \"Channel\"\n }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Helper",
+			"item": [],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0fdb6353-495b-489b-9b0b-ec88d486310a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9faab127-f73e-48de-96ad-55d051412a9a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "a0c3fa47-35ca-4708-b296-037e9540ecd7",
+			"key": "baseUrl",
+			"value": "https://testing.booxmedia.xyz/api/metadata/v1"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
