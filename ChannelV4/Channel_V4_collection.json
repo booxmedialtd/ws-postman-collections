@@ -1,0 +1,1117 @@
+{
+	"info": {
+		"_postman_id": "18e72991-8b50-454e-86ce-aa0f6f2838c8",
+		"name": "Channel_V4",
+		"description": "The Metadata API returns metadata related to the video content provided by the SmartVideo APIs.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Api Spec",
+			"item": [
+				{
+					"name": "Get an index of channels.",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "{{page}}",
+									"description": "Page number if the results have more items than items per page. Default = 1."
+								},
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								},
+								{
+									"key": "show_hidden",
+									"value": "{{showHidden}}",
+									"description": "Set parameter to show hidden Channels."
+								}
+							]
+						},
+						"description": "* We do not support including related resources in the index view.\n* **Available since:** 2020-11 (BPLAT-14148)\n\npage number : (minimum: 1) Page number if the results have more items than items per page. Default = 1\n\nlanguage : The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin).\n\nshow_hidden : (boolean) Set parameter to show hidden Channels."
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										},
+										{
+											"key": "show_hidden",
+											"value": "{{showHidden}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"42\",\n      \"type\": \"Channel\",\n      \"attributes\": {\n        \"name\": \"Yle\",\n        \"description\": \"Lozente\",\n        \"images\": [\n          {\n            \"image_type\": \"Thumbnail\",\n            \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n            \"width_pixels\": 320,\n            \"height_pixels\": 200,\n            \"iso_639-2_lang\": \"fin\",\n            \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n          }\n        ],\n        \"channel_number\": {\n          \"default\": 1\n        },\n        \"media_type\": \"video|audio\",\n        \"enabled_services\": [\n          {\n            \"type\": \"Live\",\n            \"startover\": false,\n            \"pause\": false,\n            \"trickplay\": false\n          },\n          {\n            \"type\": \"nPVR\",\n            \"watch_ongoing\": true,\n            \"trickplay\": true,\n            \"boundary_offset\": 1234\n          },\n          {\n            \"type\": \"CatchUp\",\n            \"trickplay\": false,\n            \"boundary_offset\": 1234\n          }\n        ],\n        \"channel_domains\": [\n          \"foo\",\n          \"bar\"\n        ],\n        \"dvb_info\": [\n          {\n            \"type\": \"C|T|T2\",\n            \"onid\": 123,\n            \"tsid\": 123,\n            \"sid\": 4324,\n            \"quality\": \"SD|HD|UHD\"\n          }\n        ],\n        \"metadata_provider_information\": [\n          {\n            \"provider\": \"ERICSSON\",\n            \"external_id\": \"724693092\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+						},
+						{
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										},
+										{
+											"key": "show_hidden",
+											"value": "{{showHidden}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10100\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"language must be a 3 character ISO 639-2 string\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific channel.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "{{channelId}}",
+									"type": "string",
+									"description": "(Required) The identifier of the channel."
+								}
+							]
+						},
+						"description": "* **Available since:** 2020-11 (BPLAT-14149)\n\nchannel_id : The identifier of the channel.\n\nlanguage : The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin)."
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"30301\",\n      \"title\": \"Not found\",\n      \"detail\": \"Channel ID 1234 not found\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": {\n    \"id\": \"42\",\n    \"type\": \"Channel\",\n    \"attributes\": {\n      \"name\": \"Yle\",\n      \"description\": \"Lozente\",\n      \"images\": [\n        {\n          \"image_type\": \"Thumbnail\",\n          \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n          \"width_pixels\": 320,\n          \"height_pixels\": 200,\n          \"iso_639-2_lang\": \"fin\",\n          \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n        }\n      ],\n      \"channel_number\": {\n        \"default\": 1\n      },\n      \"media_type\": \"video|audio\",\n      \"enabled_services\": [\n        {\n          \"type\": \"Live\",\n          \"startover\": false,\n          \"pause\": false,\n          \"trickplay\": false\n        },\n        {\n          \"type\": \"nPVR\",\n          \"watch_ongoing\": true,\n          \"trickplay\": true,\n          \"boundary_offset\": 1234\n        },\n        {\n          \"type\": \"CatchUp\",\n          \"trickplay\": false,\n          \"boundary_offset\": 1234\n        }\n      ],\n      \"channel_domains\": [\n        \"foo\",\n        \"bar\"\n      ],\n      \"dvb_info\": [\n        {\n          \"type\": \"C|T|T2\",\n          \"onid\": 123,\n          \"tsid\": 123,\n          \"sid\": 4324,\n          \"quality\": \"SD|HD|UHD\"\n        }\n      ],\n      \"metadata_provider_information\": [\n        {\n          \"provider\": \"ERICSSON\",\n          \"external_id\": \"724693092\"\n        }\n      ]\n    }\n  }\n}"
+						},
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10100\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"language must be a 3 character ISO 639-2 string\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "UseCase",
+			"item": [
+				{
+					"name": "List channels successfully ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fbd2a0c3-fce6-4e5e-ad37-d35d42a442c6",
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "{{page}}",
+									"description": "Page number if the results have more items than items per page. Default = 1."
+								},
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								},
+								{
+									"key": "show_hidden",
+									"value": "{{showHidden}}",
+									"description": "Set parameter to show hidden Channels."
+								}
+							]
+						},
+						"description": "page number : (minimum: 1) Page number if the results have more items than items per page. Default = 1\n\nlanguage : The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin).\n\nshow_hidden : (boolean) Set parameter to show hidden Channels.\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										},
+										{
+											"key": "show_hidden",
+											"value": "{{showHidden}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"42\",\n      \"type\": \"Channel\",\n      \"attributes\": {\n        \"name\": \"Yle\",\n        \"description\": \"Lozente\",\n        \"images\": [\n          {\n            \"image_type\": \"Thumbnail\",\n            \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n            \"width_pixels\": 320,\n            \"height_pixels\": 200,\n            \"iso_639-2_lang\": \"fin\",\n            \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n          }\n        ],\n        \"channel_number\": {\n          \"default\": 1\n        },\n        \"media_type\": \"video|audio\",\n        \"enabled_services\": [\n          {\n            \"type\": \"Live\",\n            \"startover\": false,\n            \"pause\": false,\n            \"trickplay\": false\n          },\n          {\n            \"type\": \"nPVR\",\n            \"watch_ongoing\": true,\n            \"trickplay\": true,\n            \"boundary_offset\": 1234\n          },\n          {\n            \"type\": \"CatchUp\",\n            \"trickplay\": false,\n            \"boundary_offset\": 1234\n          }\n        ],\n        \"channel_domains\": [\n          \"foo\",\n          \"bar\"\n        ],\n        \"dvb_info\": [\n          {\n            \"type\": \"C|T|T2\",\n            \"onid\": 123,\n            \"tsid\": 123,\n            \"sid\": 4324,\n            \"quality\": \"SD|HD|UHD\"\n          }\n        ],\n        \"metadata_provider_information\": [\n          {\n            \"provider\": \"ERICSSON\",\n            \"external_id\": \"724693092\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "list channels un-successfully with bad request .",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "50dc37c9-b3b9-4b3a-aaab-abaf43b476c1",
+								"exec": [
+									"pm.test(\"Response should be 400\", () => {",
+									"    pm.response.to.have.status(400);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "400",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language=bad request value&show_hidden={{showHidden}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "{{page}}",
+									"description": "Page number if the results have more items than items per page. Default = 1."
+								},
+								{
+									"key": "language",
+									"value": "bad request value",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								},
+								{
+									"key": "show_hidden",
+									"value": "{{showHidden}}",
+									"description": "Set parameter to show hidden Channels."
+								}
+							]
+						},
+						"description": "page number : (minimum: 1) Page number if the results have more items than items per page. Default = 1\n\nlanguage : The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin).\n\nshow_hidden : (boolean) Set parameter to show hidden Channels."
+					},
+					"response": [
+						{
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										},
+										{
+											"key": "show_hidden",
+											"value": "{{showHidden}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10100\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"language must be a 3 character ISO 639-2 string\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "List channels successfully without page, language and show_hidden",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fbd2a0c3-fce6-4e5e-ad37-d35d42a442c6",
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										},
+										{
+											"key": "show_hidden",
+											"value": "{{showHidden}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"42\",\n      \"type\": \"Channel\",\n      \"attributes\": {\n        \"name\": \"Yle\",\n        \"description\": \"Lozente\",\n        \"images\": [\n          {\n            \"image_type\": \"Thumbnail\",\n            \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n            \"width_pixels\": 320,\n            \"height_pixels\": 200,\n            \"iso_639-2_lang\": \"fin\",\n            \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n          }\n        ],\n        \"channel_number\": {\n          \"default\": 1\n        },\n        \"media_type\": \"video|audio\",\n        \"enabled_services\": [\n          {\n            \"type\": \"Live\",\n            \"startover\": false,\n            \"pause\": false,\n            \"trickplay\": false\n          },\n          {\n            \"type\": \"nPVR\",\n            \"watch_ongoing\": true,\n            \"trickplay\": true,\n            \"boundary_offset\": 1234\n          },\n          {\n            \"type\": \"CatchUp\",\n            \"trickplay\": false,\n            \"boundary_offset\": 1234\n          }\n        ],\n        \"channel_domains\": [\n          \"foo\",\n          \"bar\"\n        ],\n        \"dvb_info\": [\n          {\n            \"type\": \"C|T|T2\",\n            \"onid\": 123,\n            \"tsid\": 123,\n            \"sid\": 4324,\n            \"quality\": \"SD|HD|UHD\"\n          }\n        ],\n        \"metadata_provider_information\": [\n          {\n            \"provider\": \"ERICSSON\",\n            \"external_id\": \"724693092\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific channel successfully",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10645d5f-6397-4b1a-b955-3ee0a897ae59",
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "{{language}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "{{channelId}}",
+									"type": "string"
+								}
+							]
+						},
+						"description": "channel_id : The identifier of the channel.\n\nlanguage : The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin)."
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "200",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 11:43:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=54c71dc22b459d49"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=0f6e21ed03a62f1f"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "118"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1605613469"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57f-iK+rtTFrr36YxYxtM9RYrdb9Dx8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"42\",\n        \"type\": \"Channel\",\n        \"attributes\": {\n            \"name\": \"Yle\",\n            \"description\": \"Lozente\",\n            \"images\": [\n                {\n                    \"image_type\": \"Thumbnail\",\n                    \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n                    \"width_pixels\": 320,\n                    \"height_pixels\": 200,\n                    \"iso_639-2_lang\": \"fin\",\n                    \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n                }\n            ],\n            \"channel_number\": {\n                \"default\": 1\n            },\n            \"media_type\": \"video|audio\",\n            \"enabled_services\": [\n                {\n                    \"type\": \"Live\",\n                    \"startover\": false,\n                    \"pause\": false,\n                    \"trickplay\": false\n                },\n                {\n                    \"type\": \"nPVR\",\n                    \"watch_ongoing\": true,\n                    \"trickplay\": true,\n                    \"boundary_offset\": 1234\n                },\n                {\n                    \"type\": \"CatchUp\",\n                    \"trickplay\": false,\n                    \"boundary_offset\": 1234\n                }\n            ],\n            \"channel_domains\": [\n                \"foo\",\n                \"bar\"\n            ],\n            \"dvb_info\": [\n                {\n                    \"type\": \"C|T|T2\",\n                    \"onid\": 123,\n                    \"tsid\": 123,\n                    \"sid\": 4324,\n                    \"quality\": \"SD|HD|UHD\"\n                }\n            ],\n            \"metadata_provider_information\": [\n                {\n                    \"provider\": \"ERICSSON\",\n                    \"external_id\": \"724693092\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific channel successfully without language",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10645d5f-6397-4b1a-b955-3ee0a897ae59",
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "{{channelId}}",
+									"type": "string"
+								}
+							]
+						},
+						"description": "channel_id : The identifier of the channel."
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "200",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 11:43:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=54c71dc22b459d49"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=0f6e21ed03a62f1f"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "118"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1605613469"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57f-iK+rtTFrr36YxYxtM9RYrdb9Dx8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"42\",\n        \"type\": \"Channel\",\n        \"attributes\": {\n            \"name\": \"Yle\",\n            \"description\": \"Lozente\",\n            \"images\": [\n                {\n                    \"image_type\": \"Thumbnail\",\n                    \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n                    \"width_pixels\": 320,\n                    \"height_pixels\": 200,\n                    \"iso_639-2_lang\": \"fin\",\n                    \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n                }\n            ],\n            \"channel_number\": {\n                \"default\": 1\n            },\n            \"media_type\": \"video|audio\",\n            \"enabled_services\": [\n                {\n                    \"type\": \"Live\",\n                    \"startover\": false,\n                    \"pause\": false,\n                    \"trickplay\": false\n                },\n                {\n                    \"type\": \"nPVR\",\n                    \"watch_ongoing\": true,\n                    \"trickplay\": true,\n                    \"boundary_offset\": 1234\n                },\n                {\n                    \"type\": \"CatchUp\",\n                    \"trickplay\": false,\n                    \"boundary_offset\": 1234\n                }\n            ],\n            \"channel_domains\": [\n                \"foo\",\n                \"bar\"\n            ],\n            \"dvb_info\": [\n                {\n                    \"type\": \"C|T|T2\",\n                    \"onid\": 123,\n                    \"tsid\": 123,\n                    \"sid\": 4324,\n                    \"quality\": \"SD|HD|UHD\"\n                }\n            ],\n            \"metadata_provider_information\": [\n                {\n                    \"provider\": \"ERICSSON\",\n                    \"external_id\": \"724693092\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific channel un-successfully",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6f6ef5ee-9319-4d9d-8c59-1dd105f9effc",
+								"exec": [
+									"pm.test(\"Response should be 400\", () => {",
+									"    pm.response.to.have.status(400);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "400",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language=bad request value",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "bad request value",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "{{channelId}}",
+									"type": "string",
+									"description": "(Required) The identifier of the channel."
+								}
+							]
+						},
+						"description": "channel_id : The identifier of the channel.\n\nlanguage : The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin)."
+					},
+					"response": [
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10100\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"language must be a 3 character ISO 639-2 string\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Specified channel isn't found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cd8ebdb3-b0e4-472c-822b-1dd291800722",
+								"exec": [
+									"pm.test(\"Response should be 404\", () => {",
+									"    pm.response.to.have.status(404);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "404",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								":channel_id"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "{{language}}",
+									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
+								}
+							],
+							"variable": [
+								{
+									"key": "channel_id",
+									"value": "bad request value",
+									"type": "string",
+									"description": "(Required) The identifier of the channel."
+								}
+							]
+						},
+						"description": "channel_id : The identifier of the channel.\n\nlanguage : The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin)."
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"30301\",\n      \"title\": \"Not found\",\n      \"detail\": \"Channel ID 1234 not found\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "https://testing.booxmedia.xyz/api/metadata/v1",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
