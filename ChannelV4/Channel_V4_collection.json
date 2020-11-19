@@ -342,7 +342,7 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]=1234&language=fin&show_hidden=true",
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -352,17 +352,17 @@
 							"query": [
 								{
 									"key": "page[number]",
-									"value": "1234",
+									"value": "{{page}}",
 									"description": "Page number if the results have more items than items per page. Default = 1."
 								},
 								{
 									"key": "language",
-									"value": "fin",
+									"value": "{{language}}",
 									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
 								},
 								{
 									"key": "show_hidden",
-									"value": "true",
+									"value": "{{showHidden}}",
 									"description": "Set parameter to show hidden Channels."
 								}
 							]
@@ -448,7 +448,7 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]=1234&language=bad request value&show_hidden=true",
+							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language=bad request value&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -458,7 +458,7 @@
 							"query": [
 								{
 									"key": "page[number]",
-									"value": "1234",
+									"value": "{{page}}",
 									"description": "Page number if the results have more items than items per page. Default = 1."
 								},
 								{
@@ -468,7 +468,7 @@
 								},
 								{
 									"key": "show_hidden",
-									"value": "true",
+									"value": "{{showHidden}}",
 									"description": "Set parameter to show hidden Channels."
 								}
 							]
@@ -635,7 +635,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language=fin",
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -646,13 +646,13 @@
 							"query": [
 								{
 									"key": "language",
-									"value": "fin"
+									"value": "{{language}}"
 								}
 							],
 							"variable": [
 								{
 									"key": "channel_id",
-									"value": "1234",
+									"value": "{{channelId}}",
 									"type": "string"
 								}
 							]
@@ -799,7 +799,7 @@
 							"variable": [
 								{
 									"key": "channel_id",
-									"value": "1234",
+									"value": "{{channelId}}",
 									"type": "string"
 								}
 							]
@@ -953,7 +953,7 @@
 							"variable": [
 								{
 									"key": "channel_id",
-									"value": "1234",
+									"value": "{{channelId}}",
 									"type": "string",
 									"description": "(Required) The identifier of the channel."
 								}
@@ -1032,7 +1032,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language=fin",
+							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1043,7 +1043,7 @@
 							"query": [
 								{
 									"key": "language",
-									"value": "fin",
+									"value": "{{language}}",
 									"description": "The PK of the language to use, which will be a 3 character ISO 639-2 string (e.g.: fin). If this is omitted the system defined default will be used. If the requested language is not available then the system will return translations in order of the system defined preferences"
 								}
 							],
