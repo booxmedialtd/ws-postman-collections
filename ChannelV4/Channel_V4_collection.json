@@ -28,11 +28,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							],
 							"query": [
@@ -62,11 +65,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -103,11 +109,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -152,11 +161,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -185,11 +197,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -225,11 +240,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -265,11 +283,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -342,11 +363,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							],
 							"query": [
@@ -376,11 +400,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -448,11 +475,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language=bad request value&show_hidden={{showHidden}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language=bad request value&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							],
 							"query": [
@@ -482,11 +512,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -554,11 +587,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							]
 						}
@@ -570,11 +606,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -635,11 +674,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -672,11 +714,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -788,11 +833,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -819,11 +867,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -935,11 +986,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language=bad request value",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language=bad request value",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -968,11 +1022,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -1032,11 +1089,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -1065,11 +1125,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
