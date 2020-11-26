@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "18e72991-8b50-454e-86ce-aa0f6f2838c8",
+		"_postman_id": "7147fc54-3055-4b99-8c36-909df73d0848",
 		"name": "Channel_V4",
 		"description": "The Metadata API returns metadata related to the video content provided by the SmartVideo APIs.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -28,11 +28,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							],
 							"query": [
@@ -57,57 +60,19 @@
 					},
 					"response": [
 						{
-							"name": "Successful response",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"channels"
-									],
-									"query": [
-										{
-											"key": "page[number]",
-											"value": "{{page}}"
-										},
-										{
-											"key": "language",
-											"value": "{{language}}"
-										},
-										{
-											"key": "show_hidden",
-											"value": "{{showHidden}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/vnd.api+json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"data\": [\n    {\n      \"id\": \"42\",\n      \"type\": \"Channel\",\n      \"attributes\": {\n        \"name\": \"Yle\",\n        \"description\": \"Lozente\",\n        \"images\": [\n          {\n            \"image_type\": \"Thumbnail\",\n            \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n            \"width_pixels\": 320,\n            \"height_pixels\": 200,\n            \"iso_639-2_lang\": \"fin\",\n            \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n          }\n        ],\n        \"channel_number\": {\n          \"default\": 1\n        },\n        \"media_type\": \"video|audio\",\n        \"enabled_services\": [\n          {\n            \"type\": \"Live\",\n            \"startover\": false,\n            \"pause\": false,\n            \"trickplay\": false\n          },\n          {\n            \"type\": \"nPVR\",\n            \"watch_ongoing\": true,\n            \"trickplay\": true,\n            \"boundary_offset\": 1234\n          },\n          {\n            \"type\": \"CatchUp\",\n            \"trickplay\": false,\n            \"boundary_offset\": 1234\n          }\n        ],\n        \"channel_domains\": [\n          \"foo\",\n          \"bar\"\n        ],\n        \"dvb_info\": [\n          {\n            \"type\": \"C|T|T2\",\n            \"onid\": 123,\n            \"tsid\": 123,\n            \"sid\": 4324,\n            \"quality\": \"SD|HD|UHD\"\n          }\n        ],\n        \"metadata_provider_information\": [\n          {\n            \"provider\": \"ERICSSON\",\n            \"external_id\": \"724693092\"\n          }\n        ]\n      }\n    }\n  ]\n}"
-						},
-						{
 							"name": "Bad request",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -137,6 +102,50 @@
 							],
 							"cookie": [],
 							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10100\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"language must be a 3 character ISO 639-2 string\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"metadata",
+										"v1",
+										"channels"
+									],
+									"query": [
+										{
+											"key": "page[number]",
+											"value": "{{page}}"
+										},
+										{
+											"key": "language",
+											"value": "{{language}}"
+										},
+										{
+											"key": "show_hidden",
+											"value": "{{showHidden}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"42\",\n      \"type\": \"Channel\",\n      \"attributes\": {\n        \"name\": \"Yle\",\n        \"description\": \"Lozente\",\n        \"images\": [\n          {\n            \"image_type\": \"Thumbnail\",\n            \"alternate_access_description\": \"Bruce Willis shooting a big gun at some bad guys, pew pew pew\",\n            \"width_pixels\": 320,\n            \"height_pixels\": 200,\n            \"iso_639-2_lang\": \"fin\",\n            \"url\": \"https://www.demo.com/assets/img/thumbnails/movies/diehard.png\"\n          }\n        ],\n        \"channel_number\": {\n          \"default\": 1\n        },\n        \"media_type\": \"video|audio\",\n        \"enabled_services\": [\n          {\n            \"type\": \"Live\",\n            \"startover\": false,\n            \"pause\": false,\n            \"trickplay\": false\n          },\n          {\n            \"type\": \"nPVR\",\n            \"watch_ongoing\": true,\n            \"trickplay\": true,\n            \"boundary_offset\": 1234\n          },\n          {\n            \"type\": \"CatchUp\",\n            \"trickplay\": false,\n            \"boundary_offset\": 1234\n          }\n        ],\n        \"channel_domains\": [\n          \"foo\",\n          \"bar\"\n        ],\n        \"dvb_info\": [\n          {\n            \"type\": \"C|T|T2\",\n            \"onid\": 123,\n            \"tsid\": 123,\n            \"sid\": 4324,\n            \"quality\": \"SD|HD|UHD\"\n          }\n        ],\n        \"metadata_provider_information\": [\n          {\n            \"provider\": \"ERICSSON\",\n            \"external_id\": \"724693092\"\n          }\n        ]\n      }\n    }\n  ]\n}"
 						}
 					]
 				},
@@ -152,11 +161,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -171,7 +183,6 @@
 								{
 									"key": "channel_id",
 									"value": "{{channelId}}",
-									"type": "string",
 									"description": "(Required) The identifier of the channel."
 								}
 							]
@@ -180,56 +191,19 @@
 					},
 					"response": [
 						{
-							"name": "Not Found",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"channels",
-										":channel_id"
-									],
-									"query": [
-										{
-											"key": "language",
-											"value": "{{language}}"
-										}
-									],
-									"variable": [
-										{
-											"key": "channel_id",
-											"value": "{{channelId}}"
-										}
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/vnd.api+json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"30301\",\n      \"title\": \"Not found\",\n      \"detail\": \"Channel ID 1234 not found\"\n    }\n  ]\n}"
-						},
-						{
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -265,11 +239,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -298,6 +275,49 @@
 							],
 							"cookie": [],
 							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10100\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"language must be a 3 character ISO 639-2 string\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"metadata",
+										"v1",
+										"channels",
+										":channel_id"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "{{language}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "channel_id",
+											"value": "{{channelId}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"404\",\n      \"code\": \"30301\",\n      \"title\": \"Not found\",\n      \"detail\": \"Channel ID 1234 not found\"\n    }\n  ]\n}"
 						}
 					]
 				}
@@ -313,7 +333,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fbd2a0c3-fce6-4e5e-ad37-d35d42a442c6",
+								"id": "02e246d1-da92-425e-bd0c-b3c05521c063",
 								"exec": [
 									"pm.test(\"Response should be 200\", () => {",
 									"    pm.response.to.have.status(200);",
@@ -342,11 +362,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							],
 							"query": [
@@ -376,11 +399,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -419,7 +445,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "50dc37c9-b3b9-4b3a-aaab-abaf43b476c1",
+								"id": "b1a1b851-3b31-4107-9b15-1fe1b1f4982b",
 								"exec": [
 									"pm.test(\"Response should be 400\", () => {",
 									"    pm.response.to.have.status(400);",
@@ -448,11 +474,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels?page[number]={{page}}&language=bad request value&show_hidden={{showHidden}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language=bad request value&show_hidden={{showHidden}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							],
 							"query": [
@@ -482,11 +511,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -525,7 +557,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fbd2a0c3-fce6-4e5e-ad37-d35d42a442c6",
+								"id": "21fc62cb-206e-4b88-ad24-e8301144305c",
 								"exec": [
 									"pm.test(\"Response should be 200\", () => {",
 									"    pm.response.to.have.status(200);",
@@ -554,11 +586,14 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/channels",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels"
 							]
 						}
@@ -570,11 +605,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels?page[number]={{page}}&language={{language}}&show_hidden={{showHidden}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels"
 									],
 									"query": [
@@ -613,7 +651,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "10645d5f-6397-4b1a-b955-3ee0a897ae59",
+								"id": "d47957cd-cfc5-4c3e-b857-1b117e092ce3",
 								"exec": [
 									"pm.test(\"Response should be 200\", () => {",
 									"    pm.response.to.have.status(200);",
@@ -635,11 +673,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -652,8 +693,7 @@
 							"variable": [
 								{
 									"key": "channel_id",
-									"value": "{{channelId}}",
-									"type": "string"
+									"value": "{{channelId}}"
 								}
 							]
 						},
@@ -672,11 +712,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -766,7 +809,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "10645d5f-6397-4b1a-b955-3ee0a897ae59",
+								"id": "70fa15f4-e628-400d-af17-8aa4d17d35e4",
 								"exec": [
 									"pm.test(\"Response should be 200\", () => {",
 									"    pm.response.to.have.status(200);",
@@ -788,19 +831,21 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
 							"variable": [
 								{
 									"key": "channel_id",
-									"value": "{{channelId}}",
-									"type": "string"
+									"value": "{{channelId}}"
 								}
 							]
 						},
@@ -819,11 +864,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -913,7 +961,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6f6ef5ee-9319-4d9d-8c59-1dd105f9effc",
+								"id": "baabf29f-ecbd-42aa-90bb-17eb296cc1b3",
 								"exec": [
 									"pm.test(\"Response should be 400\", () => {",
 									"    pm.response.to.have.status(400);",
@@ -935,11 +983,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language=bad request value",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language=bad request value",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -954,7 +1005,6 @@
 								{
 									"key": "channel_id",
 									"value": "{{channelId}}",
-									"type": "string",
 									"description": "(Required) The identifier of the channel."
 								}
 							]
@@ -968,11 +1018,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
@@ -1010,7 +1063,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cd8ebdb3-b0e4-472c-822b-1dd291800722",
+								"id": "0b4480ba-ecd0-4aa0-a0c9-9fd0d9555666",
 								"exec": [
 									"pm.test(\"Response should be 404\", () => {",
 									"    pm.response.to.have.status(404);",
@@ -1032,11 +1085,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+							"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"metadata",
+								"v1",
 								"channels",
 								":channel_id"
 							],
@@ -1050,8 +1106,7 @@
 							"variable": [
 								{
 									"key": "channel_id",
-									"value": "bad request value",
-									"type": "string",
+									"value": "1234",
 									"description": "(Required) The identifier of the channel."
 								}
 							]
@@ -1065,11 +1120,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/channels/:channel_id?language={{language}}",
+									"raw": "{{baseUrl}}/api/metadata/v1/channels/:channel_id?language={{language}}",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"metadata",
+										"v1",
 										"channels",
 										":channel_id"
 									],
