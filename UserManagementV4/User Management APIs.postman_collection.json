@@ -235,6 +235,21 @@
 				{
 					"name": "Delete user",
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Apikey {{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
