@@ -1,0 +1,855 @@
+{
+	"info": {
+		"_postman_id": "3f1e3c4c-3b41-462c-80aa-b7923f1e52f4",
+		"name": "Streams V4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Spec",
+			"item": [
+				{
+					"name": "Get live streams",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"value": "200",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"streams",
+								"v4",
+								"live"
+							],
+							"query": [
+								{
+									"key": "filter[tv_channel_id]",
+									"value": "",
+									"description": "Return streams linked to specified tv channel id."
+								}
+							]
+						},
+						"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Live/getChannelStreams"
+					},
+					"response": [
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey invalidApiKey"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "1000001"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"10201\",\n      \"title\": \"Invalid api key\",\n      \"detail\": \"Invalid authorization api key: Unauthorised Api key provided in the header\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey {{apiKey}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "1000001"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"live-100001-hls\",\n      \"type\": \"Stream\",\n      \"attributes\": {\n        \"type\": \"hls\",\n        \"url\": \"https://org-01.amino.tv/drm/ezdrm.isml/playlist.m3u8\",\n        \"drm\": {\n          \"provider\": \"EZDRM\",\n          \"fairplay\": {\n            \"content_id\": \"2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"la_url\": \"https://fps.ezdrm.com/api/licenses/2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"cert\": \"https://org-01.amino.tv/fairplay.cer\"\n          },\n          \"widevine\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://widevine-dash.ezdrm.com/proxy?pX=000000\"\n          },\n          \"playready\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://playready.ezdrm.com/cency/preauth.aspx?pX=000000\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey {{apiKey}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10201\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"Standard error response\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "200",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "Apikey {{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=999999",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "999999",
+											"description": "Return streams linked to specified tv channel id."
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"404\",\n            \"code\": \"30805\",\n            \"title\": \"Not Found\",\n            \"detail\": \"The requested content does not exist\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get recording streams",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response should be 200\", () => {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.not.empty;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-code",
+								"type": "text",
+								"value": "200",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/vnd.api+json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/streams/v4/recording?filter[external_epg_id]=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"streams",
+								"v4",
+								"recording"
+							],
+							"query": [
+								{
+									"key": "filter[external_epg_id]",
+									"value": "",
+									"description": "Return streams linked to specified external epg id."
+								}
+							]
+						},
+						"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Recording/getRecordingStreams"
+					},
+					"response": [
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey invalidApiKey"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording?filter[external_epg_id]=100001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "100001"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"10201\",\n      \"title\": \"Invalid api key\",\n      \"detail\": \"Invalid authorization api key: Unauthorised Api key provided in the header\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey {{apiKey}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "100001",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10201\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"Standard error response\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "Apikey {{apiKey}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording?filter[external_epg_id]=999999",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "999999",
+											"description": "Return streams linked to specified external epg id."
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"404\",\n            \"code\": \"30805\",\n            \"title\": \"Not Found\",\n            \"detail\": \"The requested content does not exist\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey {{apiKey}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording?filter[external_epg_id]=100001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "100001"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"recording-100001-hls\",\n      \"type\": \"Stream\",\n      \"attributes\": {\n        \"type\": \"hls\",\n        \"url\": \"https://org-01.amino.tv/drm/ezdrm.isml/playlist.m3u8\",\n        \"drm\": {\n          \"provider\": \"EZDRM\",\n          \"fairplay\": {\n            \"content_id\": \"2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"la_url\": \"https://fps.ezdrm.com/api/licenses/2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"cert\": \"https://org-01.amino.tv/fairplay.cer\"\n          },\n          \"widevine\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://widevine-dash.ezdrm.com/proxy?pX=000000\"\n          },\n          \"playready\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://playready.ezdrm.com/cency/preauth.aspx?pX=000000\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "UseCase",
+			"item": [
+				{
+					"name": "Successful use cases",
+					"item": [
+						{
+							"name": "Get live streams",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "200",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "1000001",
+											"description": "Return streams linked to specified tv channel id."
+										}
+									]
+								},
+								"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Live/getChannelStreams"
+							},
+							"response": []
+						},
+						{
+							"name": "Get recording streams",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"type": "text",
+										"value": "200"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.api+json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording?filter[external_epg_id]=100001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "100001",
+											"description": "Return streams linked to specified external epg id."
+										}
+									]
+								},
+								"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Recording/getRecordingStreams"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Other use cases",
+					"item": [
+						{
+							"name": "Get live streams - Unauthorized",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "401",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "1000001",
+											"description": "Return streams linked to specified tv channel id."
+										}
+									]
+								},
+								"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Live/getChannelStreams"
+							},
+							"response": []
+						},
+						{
+							"name": "Get live streams - Bad Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"value": "400",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "1000001",
+											"description": "Return streams linked to specified tv channel id.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Live/getChannelStreams"
+							},
+							"response": []
+						},
+						{
+							"name": "Get recording streams - Unauthorized",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"type": "text",
+										"value": "401"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.api+json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording?filter[external_epg_id]=100001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "100001",
+											"description": "Return streams linked to specified external epg id."
+										}
+									]
+								},
+								"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Recording/getRecordingStreams"
+							},
+							"response": []
+						},
+						{
+							"name": "Get recording streams - Bad Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response should be 200\", () => {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.not.empty;",
+											"    pm.response.to.be.json;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mock-response-code",
+										"type": "text",
+										"value": "400"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.api+json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "100001",
+											"description": "Return streams linked to specified external epg id.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "https://confluence.aminocom.com/display/MAPI/Streams+v4#/Recording/getRecordingStreams"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Apikey {{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
