@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3f1e3c4c-3b41-462c-80aa-b7923f1e52f4",
+		"_postman_id": "8ed8ebeb-4b34-4934-90e5-0366c2cef8ce",
 		"name": "Streams V4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -31,8 +31,7 @@
 							{
 								"key": "x-mock-response-code",
 								"value": "200",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							},
 							{
 								"key": "Content-Type",
@@ -41,7 +40,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=",
+							"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -54,7 +53,7 @@
 							"query": [
 								{
 									"key": "filter[tv_channel_id]",
-									"value": "",
+									"value": "1000001",
 									"description": "Return streams linked to specified tv channel id."
 								}
 							]
@@ -63,48 +62,6 @@
 					},
 					"response": [
 						{
-							"name": "Unauthorized",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"description": "Added as a part of security scheme: apikey",
-										"key": "Authorization",
-										"value": "Apikey invalidApiKey"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"streams",
-										"v4",
-										"live"
-									],
-									"query": [
-										{
-											"key": "filter[tv_channel_id]",
-											"value": "1000001"
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/vnd.api+json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"10201\",\n      \"title\": \"Invalid api key\",\n      \"detail\": \"Invalid authorization api key: Unauthorised Api key provided in the header\"\n    }\n  ]\n}"
-						},
-						{
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
@@ -112,13 +69,17 @@
 									{
 										"description": "Added as a part of security scheme: apikey",
 										"key": "Authorization",
-										"value": "Apikey {{apiKey}}"
+										"value": "Apikey 1q2w3e"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
+									"raw": "https://693c2f04-1f3e-465f-ac77-9ce85ecf9261.mock.pstmn.io/api/streams/v4/live?filter[tv_channel_id]=",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"693c2f04-1f3e-465f-ac77-9ce85ecf9261",
+										"mock",
+										"pstmn",
+										"io"
 									],
 									"path": [
 										"api",
@@ -129,7 +90,7 @@
 									"query": [
 										{
 											"key": "filter[tv_channel_id]",
-											"value": "1000001"
+											"value": ""
 										}
 									]
 								}
@@ -237,6 +198,48 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"404\",\n            \"code\": \"30805\",\n            \"title\": \"Not Found\",\n            \"detail\": \"The requested content does not exist\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey invalidApiKey"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/live?filter[tv_channel_id]=1000001",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"live"
+									],
+									"query": [
+										{
+											"key": "filter[tv_channel_id]",
+											"value": "1000001"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"10201\",\n      \"title\": \"Invalid api key\",\n      \"detail\": \"Invalid authorization api key: Unauthorised Api key provided in the header\"\n    }\n  ]\n}"
 						}
 					]
 				},
@@ -263,8 +266,7 @@
 							{
 								"key": "x-mock-response-code",
 								"type": "text",
-								"value": "200",
-								"disabled": true
+								"value": "200"
 							},
 							{
 								"key": "Content-Type",
@@ -295,14 +297,14 @@
 					},
 					"response": [
 						{
-							"name": "Unauthorized",
+							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"description": "Added as a part of security scheme: apikey",
 										"key": "Authorization",
-										"value": "Apikey invalidApiKey"
+										"value": "Apikey {{apiKey}}"
 									}
 								],
 								"url": {
@@ -324,8 +326,8 @@
 									]
 								}
 							},
-							"status": "Unauthorized",
-							"code": 401,
+							"status": "OK",
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -334,50 +336,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"10201\",\n      \"title\": \"Invalid api key\",\n      \"detail\": \"Invalid authorization api key: Unauthorised Api key provided in the header\"\n    }\n  ]\n}"
-						},
-						{
-							"name": "Bad Request",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"description": "Added as a part of security scheme: apikey",
-										"key": "Authorization",
-										"value": "Apikey {{apiKey}}"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/api/streams/v4/recording",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"streams",
-										"v4",
-										"recording"
-									],
-									"query": [
-										{
-											"key": "filter[external_epg_id]",
-											"value": "100001",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/vnd.api+json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10201\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"Standard error response\"\n    }\n  ]\n}"
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"recording-100001-hls\",\n      \"type\": \"Stream\",\n      \"attributes\": {\n        \"type\": \"hls\",\n        \"url\": \"https://org-01.amino.tv/drm/ezdrm.isml/playlist.m3u8\",\n        \"drm\": {\n          \"provider\": \"EZDRM\",\n          \"fairplay\": {\n            \"content_id\": \"2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"la_url\": \"https://fps.ezdrm.com/api/licenses/2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"cert\": \"https://org-01.amino.tv/fairplay.cer\"\n          },\n          \"widevine\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://widevine-dash.ezdrm.com/proxy?pX=000000\"\n          },\n          \"playready\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://playready.ezdrm.com/cency/preauth.aspx?pX=000000\"\n          }\n        }\n      }\n    }\n  ]\n}"
 						},
 						{
 							"name": "Not Found",
@@ -423,7 +382,7 @@
 							"body": "{\n    \"errors\": [\n        {\n            \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n            \"status\": \"404\",\n            \"code\": \"30805\",\n            \"title\": \"Not Found\",\n            \"detail\": \"The requested content does not exist\"\n        }\n    ]\n}"
 						},
 						{
-							"name": "Successful response",
+							"name": "Bad Request",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -431,6 +390,49 @@
 										"description": "Added as a part of security scheme: apikey",
 										"key": "Authorization",
 										"value": "Apikey {{apiKey}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/streams/v4/recording",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"streams",
+										"v4",
+										"recording"
+									],
+									"query": [
+										{
+											"key": "filter[external_epg_id]",
+											"value": "100001",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"400\",\n      \"code\": \"10201\",\n      \"title\": \"Bad Request\",\n      \"detail\": \"Standard error response\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "Apikey invalidApiKey"
 									}
 								],
 								"url": {
@@ -452,8 +454,8 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Unauthorized",
+							"code": 401,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -462,7 +464,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"data\": [\n    {\n      \"id\": \"recording-100001-hls\",\n      \"type\": \"Stream\",\n      \"attributes\": {\n        \"type\": \"hls\",\n        \"url\": \"https://org-01.amino.tv/drm/ezdrm.isml/playlist.m3u8\",\n        \"drm\": {\n          \"provider\": \"EZDRM\",\n          \"fairplay\": {\n            \"content_id\": \"2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"la_url\": \"https://fps.ezdrm.com/api/licenses/2484bd14-0000-0000-0000-5c89a289d7c5\",\n            \"cert\": \"https://org-01.amino.tv/fairplay.cer\"\n          },\n          \"widevine\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://widevine-dash.ezdrm.com/proxy?pX=000000\"\n          },\n          \"playready\": {\n            \"content_id\": \"WTJoaGJtNWxiweE53PT0=\",\n            \"la_url\": \"https://playready.ezdrm.com/cency/preauth.aspx?pX=000000\"\n          }\n        }\n      }\n    }\n  ]\n}"
+							"body": "{\n  \"errors\": [\n    {\n      \"id\": \"6de7da3e-8877-4f2b-a670-16e18e5d79a0\",\n      \"status\": \"401\",\n      \"code\": \"10201\",\n      \"title\": \"Invalid api key\",\n      \"detail\": \"Invalid authorization api key: Unauthorised Api key provided in the header\"\n    }\n  ]\n}"
 						}
 					]
 				}
@@ -497,8 +499,7 @@
 									{
 										"key": "x-mock-response-code",
 										"value": "200",
-										"type": "text",
-										"disabled": true
+										"type": "text"
 									},
 									{
 										"key": "Content-Type",
