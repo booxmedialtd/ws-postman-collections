@@ -56,11 +56,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/clips/:clip_id",
+							"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"clipping",
+								"v4",
 								"clips",
 								":clip_id"
 							],
@@ -87,11 +90,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -128,11 +134,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -169,11 +178,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -245,11 +257,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/clips/:clip_id",
+							"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"clipping",
+								"v4",
 								"clips",
 								":clip_id"
 							],
@@ -276,11 +291,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -317,11 +335,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -358,11 +379,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -448,11 +472,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/clips/:clip_id",
+							"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"clipping",
+								"v4",
 								"clips",
 								":clip_id"
 							],
@@ -479,11 +506,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -520,11 +550,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -561,11 +594,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -602,11 +638,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -643,11 +682,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -727,11 +769,14 @@
 							"raw": "{\n  \"data\": {\n    \"type\": \"Clip\",\n    \"attributes\": {\n      \"channel_id\": \"123abc\",\n      \"start_time\": 1523268698,\n      \"end_time\": 1523268698,\n      \"provider_showing_id\": \"abc123\"\n    }\n  }\n}\n"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/clips",
+							"raw": "{{baseUrl}}/api/clipping/v4/clips",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"api",
+								"clipping",
+								"v4",
 								"clips"
 							]
 						},
@@ -750,11 +795,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								}
@@ -783,11 +831,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								}
@@ -816,11 +867,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								}
@@ -849,11 +903,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								}
@@ -922,11 +979,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -953,11 +1013,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -994,11 +1057,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1035,11 +1101,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1107,11 +1176,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -1138,11 +1210,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1179,11 +1254,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1220,11 +1298,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1310,11 +1391,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -1341,11 +1425,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1382,11 +1469,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1423,11 +1513,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1464,11 +1557,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1505,11 +1601,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1594,11 +1693,14 @@
 									"raw": "{\n  \"data\": {\n    \"type\": \"Clip\",\n    \"attributes\": {\n      \"channel_id\": \"123abc\",\n      \"start_time\": 1523268698,\n      \"end_time\": 1523268698,\n      \"provider_showing_id\": \"abc123\"\n    }\n  }\n}\n"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								},
@@ -1617,11 +1719,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -1650,11 +1755,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -1683,11 +1791,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -1716,11 +1827,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -1790,11 +1904,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -1821,11 +1938,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1862,11 +1982,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1903,11 +2026,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -1985,11 +2111,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -2016,11 +2145,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -2057,11 +2189,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -2098,11 +2233,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -2188,11 +2326,14 @@
 									"raw": "{\n  \"data\": {\n    \"type\": \"Clip\",\n    \"attributes\": {\n      \"channel_id\": \"bad Value\",\n      \"start_time\": 1523268698,\n      \"end_time\": 1523268698,\n      \"provider_showing_id\": \"abc123\"\n    }\n  }\n}\n"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								},
@@ -2211,11 +2352,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2244,11 +2388,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2277,11 +2424,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2310,11 +2460,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2392,11 +2545,14 @@
 									"raw": "{\n  \"data\": {\n    \"type\": \"Clip\",\n    \"attributes\": {\n      \"channel_id\": \"123abc\",\n      \"start_time\": 1523268698,\n      \"end_time\": 1523268698,\n      \"provider_showing_id\": \"abc123\"\n    }\n  }\n}\n"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								},
@@ -2415,11 +2571,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2448,11 +2607,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2481,11 +2643,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2514,11 +2679,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2596,11 +2764,14 @@
 									"raw": "{\n  \"data\": {\n    \"type\": \"Clip\",\n    \"attributes\": {\n      \"channel_id\": \"123abc\",\n      \"start_time\": 1523268698,\n      \"end_time\": 1523268698,\n      \"provider_showing_id\": \"abc123\"\n    }\n  }\n}\n"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips"
 									]
 								},
@@ -2619,11 +2790,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2652,11 +2826,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2685,11 +2862,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2718,11 +2898,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips"
 											]
 										}
@@ -2786,11 +2969,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -2817,11 +3003,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -2858,11 +3047,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -2899,11 +3091,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -2975,11 +3170,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -3006,11 +3204,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3047,11 +3248,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3088,11 +3292,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3178,11 +3385,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -3209,11 +3419,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3250,11 +3463,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3291,11 +3507,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3332,11 +3551,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3373,11 +3595,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3463,11 +3688,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -3494,11 +3722,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3535,11 +3766,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3576,11 +3810,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3617,11 +3854,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3657,11 +3897,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3747,11 +3990,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -3778,11 +4024,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3819,11 +4068,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3860,11 +4112,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3901,11 +4156,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -3942,11 +4200,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -4031,11 +4292,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/clips/:clip_id",
+									"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"api",
+										"clipping",
+										"v4",
 										"clips",
 										":clip_id"
 									],
@@ -4062,11 +4326,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -4103,11 +4370,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -4144,11 +4414,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -4185,11 +4458,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
@@ -4226,11 +4502,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/clips/:clip_id",
+											"raw": "{{baseUrl}}/api/clipping/v4/clips/:clip_id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
+												"api",
+												"clipping",
+												"v4",
 												"clips",
 												":clip_id"
 											],
